@@ -1,0 +1,65 @@
+Intended:
+\?$*'MaRViN'*$?\"
+
+
+
+My outcome:
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % touch \"\\\?\$\*\'MaRViN\'\*\$\?\\\"
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls
+'"\?$*'\''MaRViN'\''*$?\"'
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls -lRa *MaRV* | cat -e
+-rw-r--r-- 1 bsandler 2026_vienna 0 Aug 16 14:51 "\?$*'MaRViN'*$?\"$
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls
+'"\?$*'\''MaRViN'\''*$?\"'
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls -l
+total 0
+-rw-r--r-- 1 bsandler 2026_vienna 0 Aug 16 14:51 '"\?$*'\''MaRViN'\''*$?\"'
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls -R
+.:
+'"\?$*'\''MaRViN'\''*$?\"'
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls -a
+ .   ..  '"\?$*'\''MaRViN'\''*$?\"'
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % ls | cat -e
+"\?$*'MaRViN'*$?\"$
+bsandler@c2r3p6 ~/Desktop/sh01/ex05
+ % 
+
+------
+Understand sed:
+find . -name "*.sh" | sed 's|.*/||; s|\.sh$||'
+
+
+Test:
+
+Src = Dest
+
+Src = 12345
+Dest = abcde
+Dest = 12345\0
+
+Src < Dest
+
+Src = 12345
+Dest = abcdefghij
+Dest = 
+
+Src > Dest
+
+
+
+
+
+
+
+
+
+
+

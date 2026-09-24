@@ -1,0 +1,219 @@
+
+-----
+TOUCH
+
+touch: Standard with Newline \n
+touch -n: without Newline
+touch -t: Change Date last Modified: "touch -t YYYYMMDDhhmm Filename"
+
+-----
+CHMOD
+
+0 = ---
+1 = --x
+2 = -w-
+3 = -wx
+4 = r--
+5 = r-x
+6 = rw-
+7 = rwx
+
+Acess individual rights by: chmod e.g. u+r:
+u = userrights
+g = grouprights
+o = other/global rights
+
+-----
+FILETYPES
+
+Linux recognizes 7 types of files:
+Regular files ( - )
+Directory files ( d )
+Character device files ( c )
+Block device files ( b ), 
+Named pipes / FIFOs ( p )
+Socket files ( s )
+Symbolic links / Symlinks ( l )
+
+-----
+LINKING
+
+ln	make links between files
+-s	Symlink (Symbolic link): Syntax: ln -s [Pfad/zum/Ziel] [Name/des/Links]
+-f	Hard links, remove existing destination files
+
+
+-----
+LS
+
+ls	list directory contents
+-a	all, not ignore entries starting with .
+-l	use long listing format
+-m	use comma separator
+-p, --indicator-style=slash	append / indicator to directories
+-r	reverse
+-t	sort by time, newest to first
+-1	newlines after each doc
+Flags can be combinfind . \( -type f, -type d\) | wc -l
+ed. ls -la OR ls -l -a
+ls */*	show all files with  structure
+
+
+-----
+SHELL SCRIPTING:
+
+Create file with .sh ending.
+(Shebang) on top of every file
+#!/bin/bash for MacOS 
+#!/bin/sh for Linux
+echo "Hello" to print.
+any commands, like ls, pwd, etc.
+execute with ./bashfile.sh
+
+
+-----
+
+GIT 42_TUTORIAL
+usually use git clone <link> <custom name>
+for safety reasons we need SSH key in our intra
+use in terminal: ssh-keygen OR ssh-keygen ed_
+
+
+
+-----
+GIT
+Check the connection
+git remote -v — shows which repo (which URL) you're connected to.
+
+Check your state — your most important command
+git status — what's changed, what's not yet committed, what's untracked, and whether you're in sync with the server. Look at it before and after every step.
+
+See what's committed
+git log --oneline — list of all your commits, one per line.
+git show --stat — which files are in the last commit.
+git ls-tree -r --name-only HEAD — all files in the newest commit, with folder structure.
+
+The workflow
+git add . — stage all changes (or target one: git add file.c).
+git commit -m "message" — capture the snapshot.
+git push — upload to the server.
+
+The real server check
+git clone <url> check-copy (in /tmp) then ls -R — pull a fresh copy from the server and look at what's actually up there. The most reliable check before evaluation.
+
+
+git log - show last commits
+git log -3 show the last 3 commits
+git log --pretty=format:"%H" show only IDs (H for long IDs, h for short IDs)
+
+Specifications for git log --pretty=format:"..."
+%H Commit-Hash
+%h gekürzter Commit-Hash
+%T Hash-Baum
+%t gekürzter Hash-Baum
+%P Parent-Hashes
+%p gekürzte Parent-Hashes
+%an Name des Autors
+%ae E-Mail-Adresse des Autors
+%ad Erstellungs-Datum des Autors (Format berücksichtigt --date=option)
+%ar relatives Erstellungs-Datum des Autors
+%cn Name des Committers
+%ce E-Mail-Adresse des Committers
+%cd Erstellungs-Datum des Committers
+%cr relatives Erstellungs-Datum des Committers
+%s Thema (engl. Subject) = Kommentar
+
+
+
+
+-----
+
+env	show environment variables
+printenv	to specify one variable to print	
+id	print real and effective user and group IDs
+
+-----
+GREP
+
+name: global regular expression print
+-v	inverse logic
+-w	
+
+-----
+TAR
+
+
+Archive: tar -cf <filename.tar> *
+Unpack: tar -xf <filename.tar> OR -xvf
+
+
+
+
+
+head                    first 10 symbols (-n N for other number)
+tail                    last 10 symbols
+wc -l                   line count
+wc -w                   word count
+wc -c                   bytes count
+
+grep                    Zeilen mit Treffer ausgeben
+grep -v                 umgekehrt: Zeilen ohne Treffer
+grep -i                 Groß-/Kleinschreibung ignorieren
+grep -c                 Treffer zählen statt ausgeben
+grep -w                 nur ganze Wörter
+grep -r                 rekursiv durch Ordner suchen
+grep -o                 nur den Treffer, nicht die ganze Zeile
+
+cut -d                  set delimiter
+cut -f                  choose field to return (-f2, -f1,3, -f2-4)
+cut -c                  cut by position
+
+sort                    alphabetic sort
+sort -n                 numeric sort
+sort -r                 reverse
+sort -u                 remove duplicates
+uniq                    remove neighboring duplicates
+uniq -c                 count appearances
+uniq -d                 only show duplicates
+
+chmod                   change modus (permissions)
+chown                   change owner
+
+find -name              search for name ("*.txt")
+find -type              only files (f) only directories (d)
+find -maxdepth          limit depth
+
+|                       pipe to next program
+>                       write in next file (overwrites)
+>>                      appends on newline
+<                       read file as Input
+*                       any number of signs
+?                       precisely one sign
+[]                      one sign out of
+
+
+
+tr                      switch signs
+tr -d                   delete signs
+tr -d ' \t'		delete white spaces and tabs
+xargs                   Eingabezeilen als Argumente weiterreichen
+diff                    compare two
+echo -n                 ohne Zeilenumbruch am Ende ausgeben
+
+find . \( -type f -o -type d \) | wc -l | tr -d ' '
+
+find . -name "*.sh" | sed 's:.*/::; s:\.sh$::'
+
+SED
+
+= modify text from a pipe
+sed 's|what to replace|what to insert instead|' -> divider can be anything |/:
+for deletion leave second field empty
+standard - only replace first ocurrence
+-g	- global, replace all instances
+strip path: '*/' somehow removes everything to the last '/'
+
+getconf INT_MAX -> read max int value
+
+
+

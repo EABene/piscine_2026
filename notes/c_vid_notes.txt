@@ -1,0 +1,92 @@
+-----
+Parts of the Computer:
+
+MEMORY (RAM)
+
+is a series of slots calles bytes
+ordered in a unique line (from 0 to 16 billion on a 16 GB drive)
+each byte consists of 8 bits and can represent a number between 0 and 255
+the rank of the byte in RAM is called ADRESS of the byte and is unique for every byte
+
+
+PROCESSOR (Microprocessor)
+
+= very fast calculator
+it can operate on the bytes in the RAM to make basic calculations
+it can also copy bytes from one place to another and then communicate with Input/Output devices
+
+INPUTS/OUTPUTS
+
+e.g.
+Screen: Output
+Keyboard & Mouse: Input
+Hard Drive or USB-Stick: both Input and Output
+
+
+HOW CODING WORKS
+
+we will declare the RAM we need to store our data
+and make calculations on
+
+we will then give precise instructions to the PROCESSOR to manipulate our data
+-> make the actual needed calculations
+
+and then communicate that with the input and output devices
+
+
+Computer only understands these coded instructions which are the series of numbers in RAM
+we humans can't read this.
+C Code is human readable and will be compiled into a language the compiler can actually understand
+
+-----
+
+VARIABLES
+are bytes in RAM to store data and make calculations
+we can read and modify these variables
+we can manipulate bytes oen by one, or manipulate different group of bytes at once
+
+CHAR =Character
+signed char can store values between -128 and +127 (range of 255)
+unsigned char can store values between 0 and 255 (range of 255)
+
+character literal - char achar = 'a';
+string literal - int *astr = "b"; <- to be checked!!!
+
+INT = Integer
+groups 4 bytes and can store roughly between -2 billion and + 2 billion
+
+unsigned prefix
+
+main function always returns INT
+parameters placed between the brackets
+
+instruction can be
+- expression (something followed by a semicolon);
+	always has a numerical number
+	e.g. 1, 42, 50, 3 + 5, 4 - 9 * 2, a (prev defined), function call 
+	(can also be used as 4 + function_q(void))
+- control sequence
+	block with series of instructions between braces
+	condition (if)
+	loop (while)
+	return statement
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
